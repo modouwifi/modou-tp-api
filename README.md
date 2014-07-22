@@ -14,7 +14,9 @@ But we did. :D
 - 消息对话框组件 `messagebox`
 - 图片查看器组件 `imageview`
 
-## 万能 app: `custom`
+## 触屏 API 列表及其说明
+
+### 万能 app: `custom`
 
 我们尝试在命令行下执行它：
 
@@ -75,3 +77,19 @@ Bingo! 所以呢，我们尝试性地敲下：
 
 这个时候再回头去看 `/system/apps/tp/conf/custom.conf` 的内容，大家明白了么？ XD
 
+### 消息对话框组件 `messagebox`
+
+WIP
+
+### 图片查看器组件 `imageview`
+
+同样地，我们先尝试在 shell 下执行：
+
+    $ imageview
+
+得到输出为：
+
+```
+(103230.240260)/mem/mochui-rom/mochui-sys/microwin/src/mochui/imageview.c-98: Wrong arguments
+imageview path-to-image-file image-width image-height
+```
