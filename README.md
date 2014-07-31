@@ -14,6 +14,11 @@ But we did. :D
 - 消息对话框组件 `messagebox`
 - 图片查看器组件 `imageview`
 
+## 触屏应用示例
+
+- [背光控制](https://github.com/modouwifi/backlight-control)
+- [Modou Love](http://bbs.modouwifi.cn/thread-7223-1-1.html)
+
 ## 触屏 API 列表及其说明
 
 ### 万能 app: `custom`
