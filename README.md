@@ -79,7 +79,17 @@ Bingo! 所以呢，我们尝试性地敲下：
 
 ### 消息对话框组件 `messagebox`
 
-WIP
+在 shell 下执行：
+
+    $ messagebox
+
+输出为：
+
+```
+(110177.570320)/mem/mochui-rom/mochui-sys/microwin/src/mochui/messagebox.c-189: Wrong arguments!
+messagebox title content 1 ok_text ok_cmd
+messagebox title content 2 no_text no_cmd yes_text yes_cmd
+```
 
 ### 图片查看器组件 `imageview`
 
