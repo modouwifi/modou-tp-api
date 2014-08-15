@@ -117,19 +117,23 @@ imageview path-to-image-file image-width image-height
     textview title content loop-interval(ms) loop-count loop-cmd ret-file
 
 这是textview的两种使用方式:
+
 第一种是静态的显示方式，只需要指定标题和文字，点击界面左上角箭头可以退出应用。
+
 第二种可以用来显示动态的问题，如倒计时的动态文字，参数解释如下
-title             标题
-content           内容
-loop-interval     以什么样的频率去循环执行脚本（单位毫秒）
-loop-count        共循环执行脚本多少次(如果为0，表示无限次)
-loop-cmd          执行的脚本名字，其中可以使用%LOOP_COUNT%关键字，表示当前的循环次数
-ret-file          每次脚本执行结束后，textview会从这个文件中读取文本用来显示
+
+- title             标题
+- content           内容
+- loop-interval     以什么样的频率去循环执行脚本（单位毫秒）
+- loop-count        共循环执行脚本多少次(如果为0，表示无限次)
+- loop-cmd          执行的脚本名字，其中可以使用%LOOP_COUNT%关键字，表示当前的循环次数
+- ret-file          每次脚本执行结束后，textview会从这个文件中读取文本用来显示
 
 这个控件略显复杂，下面给出一个示例
 textview WPS连接 "" 1000 31 "/data/loop.sh %LOOP-COUNT% >/tmp/out" /tmp/out
 
 loop.sh 的内容
+
     #!/bin/sh
     var=`expr 31 - $1`
     echo 请在 $var 秒内按下设备上的wps键，如果已经连接成功，可以选择退出
@@ -142,8 +146,8 @@ loop.sh 的内容
     inputtext default-text prompt-text write-to-file min-lin max-len
 
 
-default-text       输入法界面出现的时候，默认已经输入的文字
-prompt-text        输入法界面的提示文字
-write-to-file      输入成功后将输入文字写入到这个文件中
-min-lin            输入文字的最小长度限制
-max-len            输入文字的最大长度限制
+- default-text       输入法界面出现的时候，默认已经输入的文字
+- prompt-text        输入法界面的提示文字
+- write-to-file      输入成功后将输入文字写入到这个文件中
+- min-lin            输入文字的最小长度限制
+- max-len            输入文字的最大长度限制
