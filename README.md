@@ -87,8 +87,36 @@ Bingo! 所以呢，我们尝试性地敲下：
 - 新的脚本执行后返回字符串的方式。
    可以在脚本执行的过程中产生输出文本到某一个文件中，然后让custom程序从这个文件中读取字符串，然后显示在屏幕上，替代之前用不同code值对应不同返回文本的方式，这种方式会更灵活。
 
+```json
+{
+  "title" : "hdns",
+  "content" : "静态初始化文字",
+  "dynmic-content" : {
+    "cmd" : "ls",
+    "code" : {
+      "0" : "可以针对某个脚本的不同返回值返回不同的初始化文字",
+      "1" : "text2",
+      "2" : "text3"
+     },
+     "out_file" : "/etc/passwd"
+   },
+   
+  "button1" :   {
+    "txt" : "启动",
+    "cmd" : "/data/apps/hdns/sbin/hdns.sh start",
+    "code" : {
+      "0" : "执行成功",
+      "1" : "执行错误1",
+      "2" : "执行错误2"
+    },
+    "out_file" : "/etc/passwd"
+  }
+}       
+
 - 支持配置文件reload接口。
   在使用过程中，可以修改conf文件，然后给运行的custom进程发送SIGUSR1信号，custom进程就会重新载入配置文件，这种机制可以用来提供动态的界面变化，比如点击“打开”按钮后，这个按钮就会被替换为”关闭“，提供更友好的界面。
+
+    kill -SIGUSR1 pid
 
 这些新的特性的使用可以参考 modou-samba-0.3应用，这些新特性也是应modou-samba-0.3的作者junjian要求而加。    
 
