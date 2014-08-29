@@ -99,7 +99,8 @@ Bingo! 所以呢，我们尝试性地敲下：
       "2" : "text3"
      },
      "out_file" : "/etc/passwd"
-   },   
+   },
+   
   "button1" :   {
     "txt" : "启动",
     "cmd" : "/data/apps/hdns/sbin/hdns.sh start",
@@ -111,7 +112,7 @@ Bingo! 所以呢，我们尝试性地敲下：
     "out_file" : "/etc/passwd"
   }
 }
-
+```
 
 - 支持配置文件reload接口。
   在使用过程中，可以修改conf文件，然后给运行的custom进程发送SIGUSR1信号，custom进程就会重新载入配置文件，这种机制可以用来提供动态的界面变化，比如点击“打开”按钮后，这个按钮就会被替换为”关闭“，提供更友好的界面。
