@@ -98,7 +98,7 @@ Bingo! 所以呢，我们尝试性地敲下：
       "1" : "text2",
       "2" : "text3"
      },
-     "out_file" : "/etc/passwd"
+     "out_file" : "/tmp/out"
    },
    
   "button1" :   {
@@ -109,7 +109,7 @@ Bingo! 所以呢，我们尝试性地敲下：
       "1" : "执行错误1",
       "2" : "执行错误2"
     },
-    "out_file" : "/etc/passwd"
+    "out_file" : "/tmp/out"
   }
 }
 ```
