@@ -99,8 +99,7 @@ Bingo! 所以呢，我们尝试性地敲下：
       "2" : "text3"
      },
      "out_file" : "/etc/passwd"
-   },
-   
+   },   
   "button1" :   {
     "txt" : "启动",
     "cmd" : "/data/apps/hdns/sbin/hdns.sh start",
