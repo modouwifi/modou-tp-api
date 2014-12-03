@@ -192,3 +192,32 @@ loop.sh 的内容
 - write-to-file      输入成功后将输入文字写入到这个文件中
 - min-lin            输入文字的最小长度限制
 - max-len            输入文字的最大长度限制
+
+
+### 文字输出控件 textview2
+textview2是textview的升级版，可以按照特定的对齐格式显示文本，当文本超过一屏幕高度时，会自动出现竖直滚动条。
+在shell中输入textview2，会有提示
+usage : textview -t title -m content-h [(hori align)l:r:m] -v [(vert align)t:m:b]-b btn_text -s btn_cmd-f finish_flag_file -d finish_cmd
+
+- title              应用的标题
+- content            要显示的文字
+- hori align         水平方向上的对齐方式 left right middle
+- vert align         竖直方向上的对齐方式 top middle bottom
+- btn_text           标题栏右上角上显示的BUTTON的文字
+- btn_cmd            右上角按钮被按下时的执行脚本
+
+
+### 进度输出控件  progress
+progress被设计用来动态显示一个进度条.
+通过设置一个每秒触发一次的timer,轮循地执行一个loop_cmd,然后由这个脚本向两个设定的文件输出进度数字和提示内容，最后由progress不停从这两个文件中获取内容，并将其显示出来，从而达到动态更新进度和文字的效果。
+在shell中输入progress，会有提示
+progress -t title -h [(hori align)l:r:m] -v [(vert align)t:m:b] -b btn_text -s btn_cmd -j loop_cmd  -x dynamic_text_file -p dynamic_percent_file
+
+- title              应用的标题
+- hori align         水平方向上的对齐方式 left right middle
+- vert align         竖直方向上的对齐方式 top middle bottom
+- btn_text           标题栏右上角上显示的BUTTON的文字
+- btn_cmd            右上角按钮被按下时的执行脚本
+- loop_cmd           被循环执行的脚本
+- dynamic_text_file  被循环执行的脚本将要显示的动态文字内容输出到这个文件中
+- dynamic_percent_file 被循环执行的脚本将要显示的动态进度数字（1-100）输出到这个文件中
