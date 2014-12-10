@@ -221,3 +221,35 @@ progress -t title -h [(hori align)l:r:m] -v [(vert align)t:m:b] -b btn_text -s b
 - loop_cmd           被循环执行的脚本
 - dynamic_text_file  被循环执行的脚本将要显示的动态文字内容输出到这个文件中
 - dynamic_percent_file 被循环执行的脚本将要显示的动态进度数字（1-100）输出到这个文件中
+
+
+### 列表控件   list
+列表控件用于显示一个列表，外观可参考魔豆触屏launcher右上角的三条杠按钮触发出来的界面. 点击其中的每个元素时，都可以触发对应的命令。
+
+usage : list -t title -s selected_item -c config_file -w working_dir
+(json-file items[{name,cmd},..,]-w working_directory") 
+
+其中
+- title          应用的标题
+- selected       默认选中的表项（被选中的表项右边会有“*”符号）
+- config_file    list配置文件(其中定义了list中有那些项，以及每项被点击后执行什么操作)
+格式可参考背光设置APP的配置文件
+```json
+{
+    "items":[
+    { "name" : "3分钟后屏幕休眠",
+      "cmd" : "./init set_strategy 180"
+    },
+    { "name" : "10分钟后屏幕休眠",
+      "cmd" : "./init set_strategy 600"
+    },
+    { "name" : "30分钟后屏幕休眠",
+      "cmd" : "./init set_strategy 1800"
+    },
+    { "name" : "从不休眠",
+      "cmd" : "./init set_strategy 0"
+    } 
+ ]
+}
+```
+- working_dir    指定执行config_file中指定的命令时的工作目录.
